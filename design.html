@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="Postcards, healthcare workers, heroes, e-card, design, thank you">
+	<meta name="description" content="Pick a design for the front of the card out of four options">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
+	<title>Design Your Postcard</title>
+	<style>
+		.common-img{
+			float: left;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 90%;
+			padding: 15px;
+			cursor: pointer;
+		}
+		#main-img {
+			width: 100%;
+			height: auto;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.column{
+			float:left;
+			width: 50%;
+		}
+		.row::after{
+			clear: both;
+		}
+		#main-img-container {
+			width: 75%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.btn {
+			font-family: 'Open Sans Condensed', sans-serif;
+			margin-top: 50px;
+			transform: translate(-50%, -50%);
+			position: absolute;
+			top: 600%;
+			left: 75%;
+			background-color: white;
+			color: #54577c;
+			cursor: pointer;
+			text-decoration: none;
+			border: 1px solid #54577c;
+			width: 10%;
+			height: 35%;
+			text-align: center;
+			line-height: 1.25;
+		}
+		.btn:hover {
+			color: white;
+			background-color: #54577c;
+		}
+		#btn-container {
+			width: 100%;
+			margin-left: 40%;	
+		}
+		button {
+			margin: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="main-content">
+		<div id="top-nav">
+			<a href="location.html"><img src="img/left-arrow.png" alt="Left arrow" id="arrow"></a>
+			<p>SELECT A DESIGN</p>
+		<div class="container" id="left">
+			<div class="row">
+				<div class="column">
+					<img src="img/thank-you-1.png" alt="Thank you healthcare heroes with doctor-patient photo" class="common-img">
+				</div>
+				<div class="column">
+					<img src="img/thank-you-2.png" alt="We are truly grateful for all you do with image of doctors standing in a line" class="common-img">
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<img src="img/thank-you-3.png" alt="We love our heroes with a beating heart photo" class="common-img">
+				</div>
+				<div class="column">
+					<img src="img/thank-you-4.png" alt="Can't mask our gratitude for everything you do with mask photo" class="common-img">
+				</div>
+			</div>
+		</div>
+		<div class="container" id="right">
+			<div id="main-img-container">
+			<img src="img/thank-you-1.png" alt="Thank you healthcare heroes with doctor-patient photo" id="main-img"></div>
+		<div id="btn-container">
+		<a href="message.html" class="btn">NEXT</a></div>
+	</div>
+</div>
+	<div class="clearfloat"></div>
+</div>
+	<div id="navbar">
+		<a href="begin.html">Begin</a>
+		<a href="location.html">Location</a>
+		<a href="design.html" class="active">Design</a>
+		<a href="message.html">Message</a>
+	</div>
+
+<script>
+	function changeImage(content){
+		document.querySelector('#main-img').src = content.src;
+		document.querySelector('#main-img').alt = content.alt;
+	}
+	var images = document.querySelectorAll('.common-img');
+	for (var i = 0; i < images.length; i++){
+		images[i].onclick = function(){
+			changeImage(this);
+		}
+	}
+</script>
+</body>
+</html>
